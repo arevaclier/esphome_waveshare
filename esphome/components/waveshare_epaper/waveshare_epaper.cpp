@@ -1366,11 +1366,11 @@ void WaveshareEPaper2P13InB::initialize() {
 
   // COMMAND PANEL SETTING
   this->command(0x00);
-  this->data(0x8f);
+  this->data(0x0f);
 
   // VCOM AND DATA INTERVAL SETTING
   this->command(0x50);
-  this->data(0x37);
+  this->data(0x87);
 
   // RESOLUTION SETTING
   this->command(0x61);
