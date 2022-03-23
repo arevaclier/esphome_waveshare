@@ -1392,8 +1392,9 @@ void HOT WaveshareEPaper2P13InB::display() {
   this->command(0x13);
   delay(2);
   this->start_data_();
-  for (size_t i = 0; i < this->get_buffer_length_(); i++)
-    this->write_byte(0x00);
+  // this->write_array(this->buffer)
+  // for (size_t i = 0; i < this->get_buffer_length_(); i++)
+  //   this->write_byte(0x00);
   this->end_data_();
   delay(2);
 
