@@ -1366,17 +1366,17 @@ void WaveshareEPaper2P13InB::initialize() {
 
   // COMMAND PANEL SETTING
   this->command(0x00);
-  this->data(0x0f);
+  this->data(0x8f);
+
+  // VCOM AND DATA INTERVAL SETTING
+  this->command(0x50);
+  this->data(0x37);
 
   // RESOLUTION SETTING
   this->command(0x61);
   this->data(0x68);  // Width: 104px
   this->data(0x00);
-  this->data(0xD4);  // Height: 212px
-
-  // VCOM AND DATA INTERVAL SETTING
-  this->command(0x50);
-  this->data(0x87);
+  this->data(0xd4);  // Height: 212px
 }
 
 void HOT WaveshareEPaper2P13InB::display() {
@@ -1404,7 +1404,7 @@ void HOT WaveshareEPaper2P13InB::display() {
 
   // COMMAND POWER OFF
   // NOTE: power off < deep sleep
-  this->command(0x02);
+  // this->command(0x02);
 }
 
 int WaveshareEPaper2P13InB::get_width_internal() { return 104; }
